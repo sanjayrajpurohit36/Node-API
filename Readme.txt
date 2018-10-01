@@ -1,5 +1,8 @@
+## NodeAPI
+
 This is a Node Api which allows users to login and view data according to their roles.
-{	Admin: Can View all the data of users.
+{	
+	Admin: Can View all the data of users.
 	Accounts Admin: Can view only accounts data.
 	Sales Admin: Can view only sales data.
 }
