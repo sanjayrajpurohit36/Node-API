@@ -2,7 +2,6 @@ module.exports = function(app, db) {
 	var token = "";
 	var role ;
 	var name ;
-
 	/*
 	Test route to make sure everything is working (accessed at GET http://localhost:8080/api)	
 	A simple get route
@@ -21,7 +20,7 @@ module.exports = function(app, db) {
 					role  = doc.role;
 					name = doc.name;
 					token = Math.random().toString(36).substring(7);
-					res.json({ message: 'Welcome Mr.' + doc.name + '!!', token: token });
+					res.json({ message: 'Welcome Mr.' + doc.name + '!!', token: token });				
 				});
 			}
 			else {
@@ -51,11 +50,11 @@ module.exports = function(app, db) {
 	        	{
 	        		console.log('Welcome admin You can see complete data');
 	        		test.find().toArray(function (err, resp) {
-	        			console.log(resp);
-	        			res.json({ 
-	        						message: 'You are admin Mr.' + name,
-	        						data: resp 	
-	        					});
+        			console.log(resp);
+        			res.json({ 
+        						message: 'You are admin Mr.' + name,
+        						data: resp 	
+        					});
 	        		})
 	        	}
 
@@ -91,9 +90,10 @@ module.exports = function(app, db) {
 	app.post('/logout', function(req, res){
 		role = "";
 		token = "";
-		console.log('You are logged out and our role is empty:',role);
+		console.log('You are logged out and our role and token is empty:',role);
 		res.json({ message: 'You are logged out',
-			role : role
+			role : role,
+			token: token
 		});
 	})
 }

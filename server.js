@@ -14,12 +14,13 @@ var Bear     = require('./app/models/bear');
 var mongoose = require('mongoose');
 var URL = 'mongodb://localhost:27017/bitelit';
 mongoose.connect(URL);	//connect mongoose with this url
+var morgan = require('morgan');
 
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
+app.use(morgan(':url :response-time ms'));				// Using morgan to check request time
 var port = process.env.PORT || 8000;        // set our port
 // ROUTES FOR OUR API
 // =============================================================================
