@@ -1,0 +1,34 @@
+{
+  name: "Sanjay",
+  surname: "Rajpurohit",
+  age: 21,
+  role: "admin"
+}
+
+{
+  name: "Piyush",
+  surname: "Mehta",
+  age: 25,
+  role: "sales"
+}
+
+{
+  name: "Raj",
+  surname: "Bhanawat",
+  age: 29,
+  role: "sales"
+}
+
+{
+  name: "Love",
+  surname: "Mehta",
+  age: 21,
+  role: "accounts"
+}
+
+{
+  name: "Rahul",
+  surname: "bhavsar",
+  age: 23,
+  role: "accounts"
+}
