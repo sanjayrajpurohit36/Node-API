@@ -16,6 +16,7 @@ This is a Node Api which allows users to login and view data according to their 
 	3. localhost:8000/api/logout
 
 7. I also have commented code for localhost:8000/api/accounts api if you want to check that as well kindly un-comment that code.
+8. To show the complete data db.bitelit.find().pretty()
 
 Author: Sanjay Rajpurohit
 Contact No: 9462678202
