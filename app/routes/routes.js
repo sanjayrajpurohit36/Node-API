@@ -3,14 +3,12 @@ module.exports = function(app, db) {
 	var role ;
 	var name ;
 	var bcrypt = require('bcrypt');
+	var jwt = require('jsonwebtoken');
 	/*
 	Test route to make sure everything is working (accessed at GET http://localhost:8080/api)	
 	A simple get route
 	*/
 	app.get('/', function(req, res) {
-		bcrypt.hash('Shivansh', 1, function(err, hash) {
-  			console.log(hash);	  			
-		});
 		res.json({ message: 'This is a get route' });   
 	});
 
