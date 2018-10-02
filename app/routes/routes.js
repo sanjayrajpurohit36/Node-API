@@ -2,11 +2,15 @@ module.exports = function(app, db) {
 	var token = "";
 	var role ;
 	var name ;
+	var bcrypt = require('bcrypt');
 	/*
 	Test route to make sure everything is working (accessed at GET http://localhost:8080/api)	
 	A simple get route
 	*/
 	app.get('/', function(req, res) {
+		bcrypt.hash('Shivansh', 1, function(err, hash) {
+  			console.log(hash);	  			
+		});
 		res.json({ message: 'This is a get route' });   
 	});
 
@@ -14,21 +18,19 @@ module.exports = function(app, db) {
 	app.post('/login', function(req, res) {			//	Post route for getting username and password
 		var data = req.body;                         
 		var dbo = db.db("bitelit");
-	   	dbo.collection('bitelit').find({name: data['username'], age: parseInt(data['password'])}).toArray(function (err, docs) {		// checking username with db
-		if(docs.length != 0) {
-			docs.forEach(function (doc) {
-					role  = doc.role;
-					name = doc.name;
-					token = Math.random().toString(36).substring(7);
-					res.json({ message: 'Welcome Mr.' + doc.name + '!!', token: token });				
-				});
+	   	dbo.collection('bitelit').findOne({name: data['username']}).then(function(user) {
+		   	console.log(data['password'], user.role);
+		   	if(user && bcrypt.compareSync(data['password'], user.password)) {
+				role  = user.role;
+				name = user.name;
+				token = Math.random().toString(36).substring(7);
+				res.json({ message: 'Welcome Mr.' + user.name + '!!', token: token });				
 			}
 			else {
 				res.json({ message: 'Wrong credentials!!'});	
 			}	
-		});	
-	});
-
+	   	});		// checking username with db
+	});	
 
 	/* Show route for showing data according to roles (post method) */
 	app.post('/show', function(req, res) {
