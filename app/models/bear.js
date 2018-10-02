@@ -7,7 +7,8 @@ var BearSchema = new Schema({
     name: String,
     surname: String,
     age: String,
-    role: String
+    role: String,
+    password: String
 });
 
 module.exports = mongoose.model('bitelit', BearSchema);

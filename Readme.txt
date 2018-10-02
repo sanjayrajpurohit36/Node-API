@@ -5,7 +5,7 @@ This is a Node Api which allows users to login and view data according to their 
 }
 
 1. Install Node Js.
-2. Install the dependencies and scripts.(Mongodb, mongoose, nodemon, body-parser)
+2. Install the dependencies and scripts.(Mongodb, mongoose, nodemon, body-parser, bcrypt, morgan)
 3. Install MongoDB
 4. open the project folder in command prompt and Type npm run dev.
 5. Created the db with name bitelit and collections names also as bitelit and enter the data according to the data 
