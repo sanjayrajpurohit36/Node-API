@@ -1,9 +1,9 @@
-// app/models/bear.js
+// app/models/user.js
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var BearSchema = new Schema({
+var userSchema = new Schema({
     name: String,
     surname: String,
     age: String,
@@ -11,4 +11,4 @@ var BearSchema = new Schema({
     password: String
 });
 
-module.exports = mongoose.model('bitelit', BearSchema);
+module.exports = mongoose.model('bitelit', userSchema);
