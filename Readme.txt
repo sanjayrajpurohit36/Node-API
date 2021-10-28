@@ -3,7 +3,6 @@ This is a Node Api which allows users to login and view data according to their 
 	Accounts Admin: Can view only accounts data.
 	Sales Admin: Can view only sales data.
 }
-
 1. Install Node Js.
 2. Install the dependencies and scripts.(Mongodb, mongoose, nodemon, body-parser)
 3. Install MongoDB
@@ -14,9 +13,7 @@ This is a Node Api which allows users to login and view data according to their 
 	1. localhost:8000/api/login
 	2. localhost:8000/api/show
 	3. localhost:8000/api/logout
-
 7. I also have commented code for localhost:8000/api/accounts api if you want to check that as well kindly un-comment that code.
-
 Author: Sanjay Rajpurohit
 Contact No: 9462678202
 Mail-ID: sanjayrajpurohit36@gmail.com
